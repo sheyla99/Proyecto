@@ -1,0 +1,436 @@
+:root{
+  --color1:#252134;
+  --size1:35px;
+  --size2:17px;
+  --fondo: #f2f2f2;
+  --espacios: 10px;
+  --espacios-contenido:45px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'open sans';
+  background: var(--fondo);
+}
+
+img{
+  vertical-align: top;
+}
+
+/** Navegation Menu **/
+header{
+width: 100%;
+background-image: url(fotos/principal.jpg);
+text-align: center ;
+
+}
+.h2{
+  font-family: 'Dancing Script', cursive;
+  top: 40px;
+  left: 50%;
+}
+.h1{
+  top: 50%;
+  left: 50%;
+  font-variant: small-caps;
+}
+.nav{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  z-index: 999;
+  }
+  
+  /** Bar **/
+  .bar-icon{
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin-right: 50px;
+  cursor: pointer;
+  transition: 0.5s;
+  }
+  .bar-icon span{
+  width: 40px;
+  height: 4px;
+  background: #fff;
+  position: absolute;
+  transition: 0.5s;
+  transform: translateX(-50%);
+  }
+  .bar-icon span:nth-child(1){
+    top: 30%;
+    left: 50%;
+    background: #fff;
+  }
+  .bar-icon span:nth-child(2){
+    bottom: 30%;
+    left: 50%;
+    background: #fff;
+  }
+  .bar-icon.active span:nth-child(1){
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%) rotate(125deg);
+  background: var(--color1);
+  }
+  .bar-icon.active span:nth-child(2){
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%) rotate(225deg);
+  background: var(--color1);
+  }
+  .bar-icon:before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 4px;
+  background: #fff;
+  transition: 0.5s;
+  }
+  .bar-icon.active:before{
+  width: 0;
+  height: 0;
+  }
+  /** bar-icon **/
+  
+  .container-list{
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 0%;
+  overflow: hidden;
+  height: 89.4vh;
+  background: #f1f4df;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  .container-list .list li{
+  list-style: none;
+  padding:10px 0px;
+  }
+  .container-list .list li a{
+  position: relative;
+  text-decoration: none;
+  font-size: 2.5em;
+  color: #ddd;
+  font-weight: 700;
+  }
+  .container-list .list li a:before{
+  content: attr(data-text);
+  position: absolute;
+  top: -2px;
+  width: 100%;
+  color: #303a52;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: 0.5s ease-in-out;
+  }
+  .container-list .list:hover li a:before{
+  width: 0%;
+  }
+  .container-list .list li:hover a:before{
+  width: 100%;
+  }
+  
+  /** IMG HEADER **/
+  .img-header{
+  /*position: relative;*/
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+ /* display: flex;*/
+  justify-content: center;
+  align-items: center;
+  }
+  .degradade{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:rgba(0,0,0,0.2);
+  }
+  .welcome{
+  position: center;
+  padding:50px;
+  z-index: 10;
+  }
+  .welcome h1{
+  font-size: 4em;
+  color: #fff;
+  font-weight: 300;
+  }
+  
+  
+  /** Navegation Menu **/
+  
+  .acerca-de{
+  width: 100%;
+  padding: 50px;
+  margin-top: 100px;
+  }
+  .acerca-de .left{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 70px;
+  }
+  .acerca-de .right{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  }
+  .acerca-de .info{
+  width: 70%;
+  padding:0px 30px;
+  }
+  .acerca-img{
+  width: 40%;
+  height: 40%;
+  }
+  .acerca-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  }
+  .acerca-de .info h3{
+  margin:55px;
+  font-size: 50px;
+  }
+  .acerca-de .info p{
+  font-size: 30px;
+  color: var(--color1);
+  line-height: 27px;
+  margin: 30px 0px;
+  }
+  
+  /** Acerca de **/
+  
+  /** Team **/
+  .team-pets{
+  width: 100%;
+  padding:50px 0px;
+  background: #fff;
+  }
+  .team-pets h3{
+  display: flex;
+  justify-content: center;
+  margin:50px 0px;
+  font-size: 50px;
+  color: #9e579d;
+  font-weight: 300;
+  }
+  .content-cards{
+  width: 100%;
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  }
+  .content-cards .card{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: #000;
+  margin:20px;
+  border-radius: 10px;
+  cursor: pointer;
+  }
+  .content-cards .card .card-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: #000;
+  border-radius: 10px;
+  padding:10px;
+  }
+  .content-cards .card .card-content h4{
+  color: #fff;
+  margin:20px 0px;
+  font-size: 17px;
+  }
+  .content-cards .card .card-content p{
+  color: #fff;
+  line-height: 30px;
+  font-size: 15px;
+  }
+  .content-cards .card img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: 1s;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0% 50%);
+  }
+  .content-cards .card:hover img{
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 100% 50%);
+  }
+  
+  /**Pasatiempos **/
+   
+  .hobbies{
+    display: flex;
+    color:#fff;
+    justify-content: space-between;
+    margin: auto;
+    flex-wrap: wrap;
+  }
+  .Hobbies h3{
+  display: flex;
+  justify-content: center;
+  margin:50px 0px;
+  font-size: 50px;
+  color: #9e579d;
+  font-weight: 300;
+  }
+  .ff{
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+  }
+  .content-hobbies{
+    display: flex;
+    width: 30%;
+    margin: auto;
+    justify-content: center;
+  }
+  .content-hobbies>h2{
+    margin-bottom: var(--espacios);
+  
+  }
+  .content-hobbies>p{
+    text-align: center;
+  }
+  .libros-container{
+    width: 30%;
+  }
+  .Voley-container{
+    width: 30%;
+  }
+
+/** Footer **/
+.fab{
+  font-size: 35px;
+  margin-bottom: var(--espacios);
+}
+.iconos{
+  justify-content: space-around;
+  width: 100%;
+  display: flex;
+  height: 150px;
+  margin-top: 100px;
+}
+
+
+/** Footer **/
+
+/********************** Responsive Desing *********************************/
+
+@media only screen and (max-width: 912px){
+   
+  .acerca-de{
+  	padding:20px;
+  }
+  .acerca-img{
+  	width: 50%;
+  	height: 500px;
+  }
+  .acerca-de .info h2{
+  	font-size: 15px;
+  }
+  .acerca-de .info p{
+  	font-size: 16px;
+  }
+
+  .team-pets h2{
+  	font-size: 40px;
+  }
+  .content-cards .card{
+  	width: 40%;
+  	height: 400px;
+  }
+
+  .fundadores{
+  	margin-top: 50px;
+  }
+  .content-fundadores{
+  	display: block;
+  }
+  .fundadores > h2{
+  	position: static;
+  	color: var(--color1);
+  	margin-bottom: 20px;
+  }
+  .fundadores .clara-container{
+    padding:50px 0px;
+    width: 100%;
+  }
+  .fundadores .oscar-container{
+  	padding:50px 0px;
+  	width: 100%;
+  }
+
+  footer{
+  	margin-top: -200px;
+  }
+  footer .boxForm{
+  	width: 95%;
+  }
+  .boxForm input{
+  	width: 100%;
+  }
+  .boxForm textarea{
+  	width: 100%;
+  }
+  .boxForm h2{
+  	font-size: 40px;
+  }
+
+}
+
+@media only screen and (max-width: 700px){
+  .acerca-img{width: 100%; height: 500px;}
+  .acerca-de .left{width: 100%; display: block;}
+  .acerca-de .right{width: 100%; display: block;}
+  .acerca-de .info{width: 100%;}
+  .acerca-de .left .info{margin-bottom: 30px;}
+  .acerca-de .right .info{margin-top: 30px;}
+
+  .content-cards .card{width: 100%; height: 400px;}
+  
+  footer{padding-top: 200px;}
+  .boxForm input{width: 100%; height: 50px;}
+
+}
+
